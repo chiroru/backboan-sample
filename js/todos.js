@@ -121,8 +121,6 @@ jQuery(document).ready(function() {
     initialize: function() {
 
     this.input = this.$("#new-todo");
-    console.log(this.input);
-    console.log(this.$("#toggle-all"));
     this.allCheckbox = this.$("#toggle-all")[0];
 
     this.listenTo(Todos, 'add', this.addOne);

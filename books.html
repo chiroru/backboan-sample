@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+ <meta charset="UTF-8">
+ <title>Backbone.js - Books</title>
+ <script type="text/javascript" src="js/lib/jquery-1.9.1.js"></script>
+ <script type="text/javascript" src="js/lib/json2.js"></script>
+ <script type="text/javascript" src="js/lib/underscore.js"></script>
+ <script type="text/javascript" src="js/lib/backbone.js"></script>
+ <script type="text/javascript" src="js/books.js"></script>
+</head>
+<body>
+  <div id="bookapp">
+    <div id="navigation">
+      <ul>
+        <li id="regist">Regist</li>
+      </ul>
+    </div>
+    <div id="regist_form" style="display:none;">
+      <input id="name" type="text"> 
+      <input id="text" type="text"> 
+    </div>
+    <div id="book_list">
+    </div>
+  </div>
+</body>
+<script type="text/template" id="list-template">
+  <table>
+    <tr>
+      <th>name</th>
+      <th>text</th>
+    </tr>
+    <% _.each(list, function(r) { %>
+    <tr>
+      <td><%= r.name %></td>
+      <td><%= r.text %></td>
+    </tr>
+    <% }); %>
+  </table>
+</script>
+</html>
