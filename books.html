@@ -7,6 +7,7 @@
  <script type="text/javascript" src="js/lib/json2.js"></script>
  <script type="text/javascript" src="js/lib/underscore.js"></script>
  <script type="text/javascript" src="js/lib/backbone.js"></script>
+ <script type="text/javascript" src="js/book.js"></script>
  <script type="text/javascript" src="js/books.js"></script>
 </head>
 <body>
@@ -18,24 +19,29 @@
     </div>
     <div id="regist_form" style="display:none;">
       <input id="name" type="text"> 
-      <input id="text" type="text"> 
+      <input id="volume" type="volume"> 
+      <input id="add" type="button">
     </div>
-    <div id="book_list">
+    <div>
+      <table>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>volume</th>
+        </tr>
+        </thead>
+        <tbody id="book_list">
+        </tbody>
+      </table>
     </div>
   </div>
 </body>
 <script type="text/template" id="list-template">
-  <table>
+    <% _.each(list.models, function(r) { %>
     <tr>
-      <th>name</th>
-      <th>text</th>
-    </tr>
-    <% _.each(list, function(r) { %>
-    <tr>
-      <td><%= r.name %></td>
-      <td><%= r.text %></td>
+      <td><%= r.get("name") %></td>
+      <td><%= r.get("volume") %></td>
     </tr>
     <% }); %>
-  </table>
 </script>
 </html>
