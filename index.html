@@ -2,15 +2,50 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Backbone.js - Index</title>
+  <title>Books</title>
   <script type="text/javascript" src="js/lib/jquery-1.9.1.js"></script>
   <script type="text/javascript" src="js/lib/json2.js"></script>
   <script type="text/javascript" src="js/lib/underscore.js"></script>
   <script type="text/javascript" src="js/lib/backbone.js"></script>
-  <script type="text/javascript" src="js/application.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-ui.js"></script>
+  <link rel="stylesheet" href="./css/themes/base/jquery.ui.all.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+      jQuery("#tabs").tabs();
+    });
+  </script>
 </head>
 <body>
-  <h1>Backbone.js - Index Page</h1>
-  <hr />
+  <h1>Books</h1>
+  <div id="tabs">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#shelfs">Shelfs</a></li>
+      <li><a href="#books">Books</a></li>
+    </ul>
+    <div id="home">
+      <p>This page is home page.</p>
+    </div>
+    <div id="shelfs">
+      <p>This page provide Book Shelf's Infromation.</p>
+      <div id="list">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </tbody>
+      </div>
+    </div>
+    <div id="books">
+      <p>This page provide Book's Infromation.</p>
+    </div>
+  </div>
 </body>
 </html>
