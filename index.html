@@ -16,7 +16,7 @@
     });
   </script>
 </head>
-<body>
+<body id="bookShelfApp">
   <h1>Books</h1>
   <div id="tabs">
     <ul>
@@ -29,7 +29,25 @@
     </div>
     <div id="shelfs">
       <p>This page provide Book Shelf's Infromation.</p>
-      <div id="list">
+      <div>
+        <div id="page_navi">
+          <ul>
+            <li id="shelf_regist_navi" style="display: block">Regist</li>
+          </ul>
+        </div>
+        <div id="regist_form" style="display: none">
+          <table>
+            <tr>
+              <th>Name</th>
+              <td><input id="regist_name" type="text"></td>
+            </tr>
+            <tr>
+              <th>Description</th>
+              <td><textarea id="regist_description"></textarea></td>
+            </tr>
+          </table>
+          <hr />
+        </div>
         <table>
           <thead>
             <tr>
@@ -38,7 +56,7 @@
               <th>Description</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="shelf_list>
           </tbody>
         </tbody>
       </div>
@@ -48,4 +66,11 @@
     </div>
   </div>
 </body>
+  <script type="text/javascript" src="js/shelfView.js"></script>
+  <script type="text/javascript" src="js/bookshelfApp.js"></script>
+  <script type="text/template" id="shelf-template">
+      <td><%= id %></td>
+      <td><%= name %></td>
+      <td><%= description %></td>
+  </script>
 </html>
